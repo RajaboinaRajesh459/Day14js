@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task</title>
+</head>
+<body>
+    <script>
+        //polymorphism compile timr
+        class Polymorphism {
+            firstMethod(a, b) {
+                let c = a + b;
+                console.log(c)
+            }
+            secondMethod(a, b, c) {
+                let d = a * b * c
+                console.log(d)
+            }
+
+        }
+        const polyObj = new Polymorphism();
+        polyObj.firstMethod(1, 2);
+        polyObj.secondMethod(1, 2, 3);
+
+        //inheritence
+        class Bike {
+            constructor(company) {
+                this.company = 'Yamaha'
+            }
+            Parent() {
+                console.log('Parent vehicle');
+            }
+        }
+        class Vehicle extends Bike {
+            constructor(model, price) {
+                super();
+                this.model = model;
+                this.price = price;
+            }
+            Child() {
+                console.log('Child vehicle');
+            }
+
+        }
+        const obj = new Vehicle('R15', 150000);
+        obj.Parent();
+        console.log(obj)
+
+        //polymorphism run-time(over-riding)
+        // class Bike {
+        //     constructor(company) {
+        //         this.company = 'Yamaha'
+        //     }
+        //     Parent() {
+        //         console.log('Parent vehicle');
+        //     }
+        //     firstMethod() {
+        //         console.log('First vehicle');
+        //     }
+        // }
+        // class Vehicle extends Bike {
+        //     constructor(model, price) {
+        //         super();
+        //         this.model = model;
+        //         this.price = price;
+        //     }
+        //     Child() {
+        //         console.log('Child vehicle');
+        //     }
+        //     firstMethod() {
+        //         console.log('Second vehicle');
+        //     }
+
+        // }
+        // const obj1 = new Vehicle('R15', 150000);
+        // obj1.Parent();
+        // obj1.firstMethod();//over-ride
+        // console.log(obj1)
+
+        //Abstraction
+        class Abstraction {
+            set(a, b) {
+                this.a = a;
+                this.b = b;
+            }
+            display() {
+                console.log('a=', this.a);
+                console.log('b=', this.b);
+            }
+        }
+        let objAbs = new Abstraction();
+        objAbs.set(10, 20);
+        objAbs.display();
+
+        //static and normal methods
+        class Chat {
+            message() {
+                console.log('Hello World')
+            }
+            static message() {
+                console.log('Hello Dhuniya')
+            }
+        }
+        var msg = new Chat();
+        msg.message();
+        Chat.message();
+    </script>
+</body>
+</html>
